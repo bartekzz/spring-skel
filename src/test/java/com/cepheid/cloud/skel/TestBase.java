@@ -11,6 +11,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriBuilder;
 
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
+import org.junit.AfterClass;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -29,7 +30,6 @@ public class TestBase {
     mServerUri = "http://localhost:" + mPort;
     mClient = createClient();
   }
-
   
   public Builder getBuilder(String path, Object... values) {
     URI uri = UriBuilder.fromUri(mServerUri + path).build(values);
